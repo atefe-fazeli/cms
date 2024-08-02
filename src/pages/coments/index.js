@@ -1,6 +1,12 @@
+import Error from "../../globalComponents/error";
+
 function Coments() {
-    return <>Coments</>;
-  }
-  
-  export default Coments;
-  
+  return (
+    <>
+      
+      <Error text="هیچ کامنتی یافت نشد" />
+    </>
+  );
+}
+
+export default Coments;

@@ -13,37 +13,37 @@ function Sidebar() {
       <h1 className="sidebar_title">به داشبورد خود خوش آمدید</h1>
       <ul className="sidebar_ul">
         <li className="sidebar_ul">
-          <NavLink to="">
+          <NavLink to="/home">
             <AiOutlineHome />
             <span>صفحه اصلی</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="">
+          <NavLink to="/products">
             <AiFillProduct />
             <span>محصولات</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="">
+          <NavLink to="/coments">
             <BiCommentDetail />
             <span>کامنت ها</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="">
+          <NavLink to="/users">
             <FaUsers />
             <span> کاربران</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="">
+          <NavLink to="/orders">
             <GoListOrdered />
             <span> سفارشات</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="">
+          <NavLink to="/discount">
             <MdOutlineDiscount />
             <span>تخفیف ها </span>
           </NavLink>

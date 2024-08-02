@@ -1,5 +1,12 @@
+import Error from "../../globalComponents/error";
+
 function Home() {
-  return <>home</>;
+  return (
+    <>
+
+      <Error text="هیچ محصولی یافت نشد" />
+    </>
+  );
 }
 
 export default Home;

@@ -1,5 +1,12 @@
+import Error from "../../globalComponents/error";
+
 function Orders() {
-  return <>Orders</>;
+  return (
+    <>
+      
+      <Error text="هیچ سفارشی یافت نشد" />
+    </>
+  );
 }
 
 export default Orders;

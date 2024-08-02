@@ -1,0 +1,13 @@
+.error-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    background-color: #ff4f4f;
+    color: var(--white);
+    width: 100%;
+    border-radius: 8px;
+}
+.error-text{
+    font-size: 1.5rem;
+}
