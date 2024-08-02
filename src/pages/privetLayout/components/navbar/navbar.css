@@ -1,0 +1,84 @@
+.navbar_container{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+.navbar-section-right{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.admin-img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+
+}
+.admin_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.admin_name{
+font-size: 1.2rem;
+}
+.admin_role{
+    font-size: 0.9rem;
+color:#858585 ;
+}
+.navbar-section-left{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+}
+.navbar-input-container{
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: rgba(149, 157, 165, 0.2)0 8px  4px;
+}
+.navbar-input{
+outline: none;
+border:none;
+background-image:none;
+background-color:transparent;
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none; 
+
+}
+.navbar-input-button{
+width: max-content;
+background-color: var(--blue);
+color: var(--white);
+border-radius: 8px;
+border: none;
+padding:3px 10px;
+cursor: pointer;
+}
+.navbar-button{
+color: var(--white);
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: var(--blue);
+border-radius: 8px;
+padding: 8px;
+border: none;
+cursor: pointer;
+}
+.navbar-button>*{
+width: 1rem ;
+height: 1rem;
+
+}
+.navbar-button:hover{
+box-shadow: rgba(149, 157, 165, 0.2)0 8px  4px;
+}

@@ -1,7 +1,6 @@
 .sidebar{
     background-color: var(--blue);
     position: fixed;
-    flex: 1;
     height: 100vh;
     overflow: auto;
     color: var( --white);

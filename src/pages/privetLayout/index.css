@@ -1,0 +1,9 @@
+.main-Container{
+    position: relative;
+    margin-right: 250px;
+    padding:92px  20px 20px 20px;
+}
+.content-container{
+height: calc(100vh - 112px);
+overflow-y: auto;
+}
