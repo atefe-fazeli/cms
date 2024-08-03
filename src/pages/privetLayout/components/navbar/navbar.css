@@ -79,6 +79,6 @@ width: 1rem ;
 height: 1rem;
 
 }
-.navbar-button:hover{
+.navbar-button{
 box-shadow: rgba(149, 157, 165, 0.2)0 8px  4px;
 }

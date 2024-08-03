@@ -1,0 +1,19 @@
+.products-table-heading-tr td{
+    text-align: start;
+    padding: 10px;
+}
+.products-table-img {
+    width: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.products-table-btn {
+    padding: 8px 20px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    color: var(--white);
+    background-color: var(--blue);
+   border: none;
+   margin-left: 15px;
+}
