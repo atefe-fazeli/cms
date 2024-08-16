@@ -1,4 +1,4 @@
-import Error from "../../globalComponents/error";
+import Error from "../../globalComponents/errorComponent/error";
 
 function Coments() {
   return (
