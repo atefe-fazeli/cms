@@ -3,21 +3,21 @@ import "./DetailsModal.css";
 import "../../../src/cms.css";
 
 
-export default function DetailsModal({isOpenDetailModal,openDetailModalHandler}) {
+export default function DetailsModal({isOpenDetailModal,openDetailModalHandler,data}) {
   return (
     <div className={`modal-parent ${isOpenDetailModal && "active"}`} onClick={openDetailModalHandler}>
       <div className="details-modal">
         <table className="cms-table">
           <tr>
-            <th>اسم</th>
-            <th>قیمت</th>
+            <th>رنگبندی</th>
+            <th>فروش</th>
             <th>محبوبیت</th>
           </tr>
 
-          <tr>
-            <td>لپتاپ</td>
-            <td>۱۲،۰۰۰،۰۰۰</td>
-            <td>91</td>
+          <tr id={data.id}>
+            <td>{data.colors}</td>
+            <td>{data.sale}</td>
+            <td>{data.popularity}</td>
           </tr>
         </table>
       </div>
