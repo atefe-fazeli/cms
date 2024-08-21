@@ -2,7 +2,7 @@ import React from "react";
 import "./productsTable.css";
 import ProductItem from "./productItem";
 
-export default function productsTable() {
+export default function productsTable({data,getAllProducts}) {
   return (
     <div className="table-container">
       <table className="products-table">
@@ -13,7 +13,8 @@ export default function productsTable() {
           <th>موجودی</th>
           <th>عملیات</th>
         </tr>
-        <ProductItem />
+        {data.map(item=><ProductItem key={item.id} data={item} getAllProducts={getAllProducts}/>)}
+        
       </table>
     </div>
   );

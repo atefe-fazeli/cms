@@ -3,16 +3,14 @@ import "./productItem.css";
 import DeleteModal from "../../../globalComponents/DeleteModal/DeleteModal";
 import DetailsModal from "../../../globalComponents/DetailsModal/DetailsModal";
 import EditModal from "../../../globalComponents/EditModal/EditModal";
+import axios from "axios";
+import { deleteProductURL } from "../../../setup/api/apiRoutes";
 
-export default function ProductItem() {
+export default function ProductItem({ data ,getAllProducts}) {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isOpenDetailModal, setIsOpenDetailModal] = useState(false);
   const [isOpenEditlModal, setIsOpenEditModal] = useState(false);
 
-  function onSubmit(e) {
-    e.preventDefault();
-    console.log("kili")
-  }
   function openModalHandler() {
     setIsOpenModal(!isOpenModal);
   }
@@ -22,19 +20,30 @@ export default function ProductItem() {
   function openEditModalHandler() {
     setIsOpenEditModal(!isOpenEditlModal);
   }
+  function onSubmit(e) {
+    e.preventDefault();
+  }
+  function deleteProductHandler(id) {
+    console.log("delete here",deleteProductURL(id),"id is=>",id)
+    axios
+      .delete(deleteProductURL(id))
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((er) => {
+        console.log(er);
+      });
+      getAllProducts()
+  }
   return (
     <>
       <tr className="products-table-heading-tr">
         <td>
-          <img
-            src="/img/oil.jpeg"
-            alt="oil image"
-            className="products-table-img"
-          />
+          <img src={data.img} className="products-table-img" />
         </td>
-        <td>روغن سرخ کردنی</td>
-        <td>92000 تومان</td>
-        <td>82</td>
+        <td>{data.title}</td>
+        <td>{data.price} تومان</td>
+        <td>{data.count}</td>
         <td>
           <button
             className="products-table-btn"
@@ -45,21 +54,27 @@ export default function ProductItem() {
           <button className="products-table-btn" onClick={openModalHandler}>
             حذف
           </button>
-          <button className="products-table-btn" onClick={openEditModalHandler}>ویرایش</button>
+          <button className="products-table-btn" onClick={openEditModalHandler}>
+            ویرایش
+          </button>
         </td>
       </tr>
       <DeleteModal
         isOpenModal={isOpenModal}
         openModalHandler={openModalHandler}
+        id={data.id}
+        deleteProductHandler={deleteProductHandler}
       />
       <DetailsModal
         isOpenDetailModal={isOpenDetailModal}
         openDetailModalHandler={openDetailModalHandler}
+        data={data}
       />
       <EditModal
         isOpenEditlModal={isOpenEditlModal}
         openEditModalHandler={openEditModalHandler}
         onSubmit={onSubmit}
+        data={data}
       />
     </>
   );
