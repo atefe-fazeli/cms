@@ -1,4 +1,4 @@
-import Coments from "./pages/coments";
+import Comments from "./pages/comments";
 import Discuont from "./pages/discout";
 import Home from "./pages/home";
 import Orders from "./pages/orders";
@@ -12,8 +12,8 @@ const Routes = [
     element: <Home />,
   },
   {
-    path: "coments",
-    element: <Coments />,
+    path: "comments",
+    element: <Comments />,
   },
   {
     path: "discount",

@@ -1,6 +1,24 @@
 .products-table-heading-tr td{
     text-align: start;
     padding: 10px;
+   
+}
+.products-table-heading-tr td:nth-child(1){
+    width: 20%;
+}
+.products-table-heading-tr td:nth-child(2){
+width: 20%;
+}
+.products-table-heading-tr td:nth-child(3){
+width: 20%;
+}
+.products-table-heading-tr td:nth-child(4){
+ width: 10%;
+ }
+.products-table-heading-tr td:nth-child(5){
+width: 30%;
+display: flex ;
+justify-content: space-between;
 }
 .products-table-img {
     width: 150px;
@@ -15,5 +33,5 @@
     color: var(--white);
     background-color: var(--blue);
    border: none;
-   margin-left: 15px;
+   /* margin-left: 15px; */
 }

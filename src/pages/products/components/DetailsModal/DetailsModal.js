@@ -1,6 +1,7 @@
 import React from "react";
 import "./DetailsModal.css";
-import "../../../src/cms.css";
+import "../../../../../src/cms.css";
+
 
 
 export default function DetailsModal({isOpenDetailModal,openDetailModalHandler,data}) {

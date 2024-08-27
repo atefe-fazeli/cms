@@ -39,6 +39,7 @@
 .add-products-submit-container{
     display: flex;
     justify-content: end;
+    width: 100%;
 }
 .add-products-submit {
     background-color: var(--blue);
@@ -48,4 +49,10 @@
     font-size: 1.1rem;
     border-radius: 10px;
     border: none;
+}
+.add-product-error{
+    display: block;
+    margin-top: 15px ;
+
+    color: red;
 }

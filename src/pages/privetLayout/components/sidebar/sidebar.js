@@ -25,7 +25,7 @@ function Sidebar() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/coments">
+          <NavLink to="/comments">
             <BiCommentDetail />
             <span>کامنت ها</span>
           </NavLink>

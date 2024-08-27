@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./productItem.css";
-import DeleteModal from "../../../globalComponents/DeleteModal/DeleteModal";
-import DetailsModal from "../../../globalComponents/DetailsModal/DetailsModal";
-import EditModal from "../../../globalComponents/EditModal/EditModal";
+import DeleteModal from "./DeleteModal/DeleteModal";
+import DetailsModal from "./DetailsModal/DetailsModal";
+import EditModal from "./EditModal/EditModal";
 import axios from "axios";
 import { deleteProductURL } from "../../../setup/api/apiRoutes";
 
@@ -16,12 +16,11 @@ export default function ProductItem({ data ,getAllProducts}) {
   }
   function openDetailModalHandler() {
     setIsOpenDetailModal(!isOpenDetailModal);
+    console.log("modal detail",isOpenModal)
+
   }
   function openEditModalHandler() {
     setIsOpenEditModal(!isOpenEditlModal);
-  }
-  function onSubmit(e) {
-    e.preventDefault();
   }
   function deleteProductHandler(id) {
     console.log("delete here",deleteProductURL(id),"id is=>",id)
@@ -73,7 +72,7 @@ export default function ProductItem({ data ,getAllProducts}) {
       <EditModal
         isOpenEditlModal={isOpenEditlModal}
         openEditModalHandler={openEditModalHandler}
-        onSubmit={onSubmit}
+        id={data.id}
         data={data}
       />
     </>
