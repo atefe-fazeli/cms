@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ShowCommentModal from "./showCommentModal";
+import editCommentModal from "./editCommentModal";
 
 function CommentsItem({ comment }) {
   const [openShowComment, setOpenShowComments] = useState(false);
@@ -46,8 +47,31 @@ function CommentsItem({ comment }) {
         </td>
       </tr>
 
-      <ShowCommentModal comment={comment} openShowComment={openShowComment} showCommentHandler={showCommentHandler}/>
-      <editCommentModal />
+      <ShowCommentModal
+        comment={comment}
+        openShowComment={openShowComment}
+        showCommentHandler={showCommentHandler}
+      />
+      <editCommentModal
+        comment={comment}
+        openEditComment={openEditComment}
+        editCommentHandler={editCommentHandler}
+      />
+      <editCommentModal
+        comment={comment}
+        openDeleteComment={openDeleteComment}
+        deleteCommentHandler={deleteCommentHandler}
+      />
+      <editCommentModal
+        comment={comment}
+        openConfirmComment={openConfirmComment}
+        confirmCommentHandler={confirmCommentHandler}
+      />
+      <editCommentModal
+        comment={comment}
+        openAnswerComment={openAnswerComment}
+        answerCommentHandler={answerCommentHandler}
+      />
     </>
   );
 }

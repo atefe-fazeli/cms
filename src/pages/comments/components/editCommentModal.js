@@ -4,8 +4,8 @@ import "../Comments.css";
 
 export default function editCommentModal({
   comment,
-  openShowComment,
-  showCommentHandler,
+  openEditComment,
+  editCommentHandler,
 }) {
   return ReactDOM.createPortal(
     <div className={`modal-parent ${openShowComment && "active"}`}>
