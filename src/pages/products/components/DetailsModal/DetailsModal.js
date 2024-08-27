@@ -1,5 +1,4 @@
 import React from "react";
-import "./DetailsModal.css";
 import "../../../../../src/cms.css";
 
 

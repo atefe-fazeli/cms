@@ -24,8 +24,11 @@ export default function Comments() {
               <th>ساعت</th>
             </tr>
           </thead>
-
-          <CommentsItem data={allComments} />
+          <tbody>
+            {allComments.map((comment) => (
+              <CommentsItem comment={comment} />
+            ))}
+          </tbody>
         </table>
       ) : (
         <Error text="هیچ کامنتی یافت نشد" />
