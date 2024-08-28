@@ -1,32 +1,36 @@
 import { useState } from "react";
 import ShowCommentModal from "./showCommentModal";
-import editCommentModal from "./editCommentModal";
+import EditCommentModal from "./editCommentModal";
+import DeleteCommentModal from "./deleteCommentModal";
+import ConfirmCommentModal from "./confirmComment";
+import AnswerCommentModal from "./answerComment";
 
-function CommentsItem({ comment }) {
-  const [openShowComment, setOpenShowComments] = useState(false);
-  const [openDeleteComment, setOpenDeleteComments] = useState(false);
-  const [openEditComment, setOpenEditComments] = useState(false);
-  const [openConfirmComment, setOpenConfirmComments] = useState(false);
-  const [openAnswerComment, setOpenAnswerComments] = useState(false);
+
+function CommentsItem({ comment,updateCommentsAfterDelete }) {
+  const [openShowComment, setOpenShowComment] = useState(false);
+  const [openDeleteComment, setOpenDeleteComment] = useState(false);
+  const [openEditComment, setOpenEditComment] = useState(false);
+  const [openConfirmComment, setOpenConfirmComment] = useState(false);
+  const [openAnswerComment, setOpenAnswerComment] = useState(false);
 
   function showCommentHandler() {
-    setOpenShowComments((prev) => !prev);
+    setOpenShowComment((prev) => !prev);
   }
 
   function deleteCommentHandler() {
-    setOpenDeleteComments((prev) => !prev);
+    setOpenDeleteComment((prev) => !prev);
   }
 
   function editCommentHandler() {
-    setOpenEditComments((prev) => !prev);
+    setOpenEditComment((prev) => !prev);
   }
 
   function confirmCommentHandler() {
-    setOpenConfirmComments((prev) => !prev);
+    setOpenConfirmComment((prev) => !prev);
   }
 
   function answerCommentHandler() {
-    setOpenAnswerComments((prev) => !prev);
+    setOpenAnswerComment((prev) => !prev);
   }
 
   return (
@@ -40,10 +44,10 @@ function CommentsItem({ comment }) {
         <td>{comment.date}</td>
         <td>{comment.hour}</td>
         <td>
-          <button>حذف</button>
-          <button>ویرایش</button>
-          <button>پاسخ</button>
-          <button>تایید</button>
+          <button onClick={deleteCommentHandler}>حذف</button>
+          <button onClick={editCommentHandler}>ویرایش</button>
+          <button onClick={answerCommentHandler}>پاسخ</button>
+          <button onClick={confirmCommentHandler}>تایید</button>
         </td>
       </tr>
 
@@ -52,22 +56,23 @@ function CommentsItem({ comment }) {
         openShowComment={openShowComment}
         showCommentHandler={showCommentHandler}
       />
-      <editCommentModal
+      <EditCommentModal
         comment={comment}
         openEditComment={openEditComment}
         editCommentHandler={editCommentHandler}
       />
-      <editCommentModal
-        comment={comment}
+      <DeleteCommentModal
+        id={comment.id}
         openDeleteComment={openDeleteComment}
         deleteCommentHandler={deleteCommentHandler}
+        updateCommentsAfterDelete={updateCommentsAfterDelete}
       />
-      <editCommentModal
+      <ConfirmCommentModal
         comment={comment}
         openConfirmComment={openConfirmComment}
         confirmCommentHandler={confirmCommentHandler}
       />
-      <editCommentModal
+      <AnswerCommentModal
         comment={comment}
         openAnswerComment={openAnswerComment}
         answerCommentHandler={answerCommentHandler}

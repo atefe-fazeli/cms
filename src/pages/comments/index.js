@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from "react";
 import Error from "../../globalComponents/errorComponent/error";
 import CommentsItem from "./components/commentsItem";
+import { commentsURL } from "../../setup/api/apiRoutes";
 
 export default function Comments() {
   const [allComments, setAllComments] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/comments")
+    fetch(commentsURL)
       .then((res) => res.json())
       .then((comments) => setAllComments(comments));
   }, []);
+
+  function updateCommentsAfterDelete(id) {
+    setAllComments(allComments.filter((item) => item.id != id));
+  }
 
   return (
     <div className="cms-main">
@@ -26,7 +31,7 @@ export default function Comments() {
           </thead>
           <tbody>
             {allComments.map((comment) => (
-              <CommentsItem comment={comment} />
+              <CommentsItem comment={comment} key={comment.id} updateCommentsAfterDelete={updateCommentsAfterDelete}/>
             ))}
           </tbody>
         </table>
